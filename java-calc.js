@@ -1,3 +1,5 @@
+// basic math functions
+
 function add(num1, num2) {
     return num1 + num2;
 }
@@ -14,10 +16,25 @@ function divide(num1, num2) {
     return num1/num2;
 }
 
-console.log(add(4,2));
+//variables for two numbers and one operator
 
-console.log(subtract(4,8));
+let firstNumber;
+let secondNumber;
+let operator;
 
-console.log(multiply(2,16));
+//function to take inputs and run them through math functions
 
-console.log(divide(15,2));
+function operate(firstNumber, operator, secondNumber) {
+    if (operator == 'plus') {
+        add(firstNumber, secondNumber);
+    } else if (operator == 'minus') {
+        subtract(firstNumber, secondNumber);
+    } else if (operator == 'x') {
+        multiply(firstNumber, secondNumber);
+    } else if (operator == "division") {
+        divide(firstNumber, secondNumber);
+    } 
+
+    // else if sub, div, mul
+};
+
