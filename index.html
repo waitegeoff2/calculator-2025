@@ -8,6 +8,47 @@
     <script src="java-calc.js" defer></script>
 </head>
 <body>
-    
+
+    <div class ="calc-body">  
+    <!-- top display across top -->
+      
+        <div class ="display">
+            <div class = "screen-text">01234</div>
+            <!-- APPEND A div with inputs -->
+        </div>
+        <!-- flex TWO DIVS beside each other, maybe three rows for number buttons? -->
+        <div class = "calc-buttons">
+            <div class ="button-rows">
+                <!-- four rows (x0x, 123, 456, 789). FLEX column -->
+                <div class = "clear-row">
+                    <button id="clear">C</button>
+                </div>
+                <div class = "first-row">
+                    <button id="seven">7</button>
+                    <button id="eight">8</button>
+                    <button id="nine">9</button>
+                    <button id="divide">/</button>
+                </div>
+                <div class = "second-row">
+                    <button id="four">4</button>
+                    <button id="five">5</button>
+                    <button id="six">6</button>
+                    <button id="multiply">X</button>                    
+                </div>
+                <div class = "third-row">
+                    <button id="one">1</button>
+                    <button id="two">2</button>
+                    <button id="three">3</button>
+                    <button id="minus">-</button>                    
+                </div>
+                <div class = "fourth-row">
+                    <button id="blank">.</button>
+                    <button id="zero">0</button>
+                    <button id="equal">=</button>
+                    <button id="plus">+</button>                    
+                </div>
+            </div>
+        </div>
+    </div>      
 </body>
 </html>
