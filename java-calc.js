@@ -1,3 +1,20 @@
+const display = document.querySelector(".display");
+const displayText = document.querySelector(".screen-text")
+const numButtons = document.querySelectorAll(".number");
+const opButtons = document.querySelectorAll(".operator");
+const equalButton = document.querySelector(".end-operator");
+const clearButton = document.querySelector("#clear");
+
+let firstNumber = 0;
+let secondNumber = 0;
+let operator = "";
+
+displayText.textContent = "900";
+
+// populate the display by clicking buttons
+
+
+
 // basic math functions
 
 function add(num1, num2) {
@@ -18,9 +35,6 @@ function divide(num1, num2) {
 
 //variables for two numbers and one operator
 
-let firstNumber;
-let secondNumber;
-let operator;
 
 //function to take inputs and run them through math functions
 
