@@ -24,7 +24,7 @@ body {
     border: solid black 0.3px;
     border-radius: 4px;
     width: 300px;
-    height: 80px;
+    height: 70px;
     margin: 5px;
     margin-bottom:15px;
     margin-top: 15px;
@@ -34,7 +34,7 @@ body {
 
 .screen-text {
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 60px;
+    font-size: 40px;
     margin: 4px;
 }
 
