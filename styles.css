@@ -15,6 +15,15 @@ body {
     align-items:center;
 }
 
+.page-title {
+    padding: 0;
+    margin: 0;
+}
+
+.page-subtitle {
+    margin: 0;
+}
+
 .calc-body {
     display: flex;
     flex-direction: column;
@@ -57,10 +66,6 @@ button {
     border-radius: 4px;
     border-style: solid;
     
-}
-
-#clear {
-
 }
 
 button:hover {
