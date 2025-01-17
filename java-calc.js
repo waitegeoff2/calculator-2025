@@ -42,7 +42,7 @@ function operate(operator, firstNumber, secondNumber) {
         return multiply(firstNumber, secondNumber);
     } else if (operator == '/') {
         if (secondNumber === 0) {
-            displayText.textContent = errorString;
+            displayText.errorString;
             console.log(displayText.textContent);
         } else if (secondNumber != 0) {
         return divide(firstNumber, secondNumber)};

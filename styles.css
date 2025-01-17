@@ -1,7 +1,18 @@
 body {
     display:flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
     background-color: lightcyan;
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family:'Times New Roman', Times, serif;
+    align-items:center;
 }
 
 .calc-body {

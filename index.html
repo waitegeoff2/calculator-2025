@@ -7,48 +7,55 @@
     <link rel = "stylesheet" href = "styles.css">
 </head>
 <body>
+    <div class = "titles">
+        <h1 class = "page-title">Calculator</h1>
+        <h2 class = "page-subtitle">It works</h2>
+    </div>
 
-    <div class ="calc-body">  
-    <!-- top display across top -->
-      
-        <div class ="display">
-            <div class = "screen-text"></div>
-            <!-- APPEND A div with inputs -->
-        </div>
-        <!-- flex TWO DIVS beside each other, maybe three rows for number buttons? -->
-        <div class = "calc-buttons">
-            <div class ="button-rows">
-                <!-- four rows (x0x, 123, 456, 789). FLEX column -->
-                <div class = "clear-row">
-                    <button id="clear">C</button>
-                </div>
-                <div class = "first-row">
-                    <button id="7" class = "number">7</button>
-                    <button id="8" class = "number">8</button>
-                    <button id="9" class = "number">9</button>
-                    <button id="/" class = "operator">/</button>
-                </div>
-                <div class = "second-row">
-                    <button id="4" class = "number">4</button>
-                    <button id="5" class = "number">5</button>
-                    <button id="6" class = "number">6</button>
-                    <button id="x" class = "operator">X</button>                    
-                </div>
-                <div class = "third-row">
-                    <button id="1" class = "number">1</button>
-                    <button id="2" class = "number">2</button>
-                    <button id="3" class = "number">3</button>
-                    <button id="-" class = "operator">-</button>                    
-                </div>
-                <div class = "fourth-row">
-                    <button id="period">.</button>
-                    <button id="0" class = "number">0</button>
-                    <button id="equal" class = "end-operator">=</button>
-                    <button id="+" class = "operator">+</button>                    
+    <div class = "container">
+        
+        <div class ="calc-body">  
+        <!-- top display across top -->
+        
+            <div class ="display">
+                <div class = "screen-text"></div>
+                <!-- APPEND A div with inputs -->
+            </div>
+            <!-- flex TWO DIVS beside each other, maybe three rows for number buttons? -->
+            <div class = "calc-buttons">
+                <div class ="button-rows">
+                    <!-- four rows (x0x, 123, 456, 789). FLEX column -->
+                    <div class = "clear-row">
+                        <button id="clear">C</button>
+                    </div>
+                    <div class = "first-row">
+                        <button id="7" class = "number">7</button>
+                        <button id="8" class = "number">8</button>
+                        <button id="9" class = "number">9</button>
+                        <button id="/" class = "operator">/</button>
+                    </div>
+                    <div class = "second-row">
+                        <button id="4" class = "number">4</button>
+                        <button id="5" class = "number">5</button>
+                        <button id="6" class = "number">6</button>
+                        <button id="x" class = "operator">X</button>                    
+                    </div>
+                    <div class = "third-row">
+                        <button id="1" class = "number">1</button>
+                        <button id="2" class = "number">2</button>
+                        <button id="3" class = "number">3</button>
+                        <button id="-" class = "operator">-</button>                    
+                    </div>
+                    <div class = "fourth-row">
+                        <button id="period">.</button>
+                        <button id="0" class = "number">0</button>
+                        <button id="equal" class = "end-operator">=</button>
+                        <button id="+" class = "operator">+</button>                    
+                    </div>
                 </div>
             </div>
-        </div>
-    </div> 
+        </div> 
+    </div>
     <script src="java-calc.js"></script>     
 </body>
 </html>
