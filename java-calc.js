@@ -96,8 +96,10 @@ opButtons.forEach((button) => {
              clearDisplay();
              displayText.textContent += opResult;
              firstNumber = opResult;
+             operator = button.id;
              secondNumber = 0;
               console.log(firstNumber);
+              console.log(operator);
         };
     })
 });
