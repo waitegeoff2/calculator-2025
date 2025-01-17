@@ -5,9 +5,11 @@ const opButtons = document.querySelectorAll(".operator");
 const equalButton = document.querySelector(".end-operator");
 const clearButton = document.querySelector("#clear");
 
+//these store data and get updated in the functions below
 let firstNumber = 0;
 let secondNumber = 0;
 let operator = "";
+let errorString = "Can't do that chief";
 
 // basic math functions
 
@@ -27,32 +29,24 @@ function divide(num1, num2) {
     return num1/num2;
 }
 
-//variables for two numbers and one operator
-
-
 //function to take inputs and run them through math functions
 
-function operate(firstNumber, operator, secondNumber) {
+function operate(operator, firstNumber, secondNumber) {
     if (operator == '+') {
-        add(firstNumber, secondNumber);
+        return add(firstNumber, secondNumber);
     } else if (operator == '-') {
-        subtract(firstNumber, secondNumber);
+        return subtract(firstNumber, secondNumber);
     } else if (operator == 'x') {
-        multiply(firstNumber, secondNumber);
-    } else if (operator == "/") {
-        divide(firstNumber, secondNumber);
+        return multiply(firstNumber, secondNumber);
+    } else if (operator == '/') {
+        if (secondNumber === 0) {
+            displayText.textContent = errorString;
+            console.log(displayText.textContent);
+        } else if (secondNumber != 0) {
+        return divide(firstNumber, secondNumber)};
     } 
 
-    // else if sub, div, mul
 };
-
-// populate the display by clicking buttons
-//button clicks -> go to display
-// LOOK UP BUTTON FOR EACH IN LESSON
-//take display - make into array
-//put into function
-// make into array, split array, add into operate function? 
-
 
 //turn the display into an array, join into string and turn into number
 function getNumber (input) {
@@ -61,48 +55,59 @@ function getNumber (input) {
     return numInput;    
 }
 
-
 function clearDisplay () {
     displayText.textContent = "";
 };
 
+//put numbers on display screen
 numButtons.forEach((button) => {
     button.addEventListener("click", () => {
         displayText.textContent += button.id;
     })
 });
-// store number as variable, then take operator, store that as varible, then clear
 
 opButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        // when operator is pressed, turn display from string into int and store
-        numberOne = getNumber(displayText.textContent);
-        console.log(numberOne);
-        // store operate value
-        operator = button.id;
-        console.log(operator);
-        // clear screen
-        clearDisplay();
+        console.log(firstNumber);
+        // if numberOne > 0. Means this is the second number and we equal it
+        // if (firstNumber == 0) {
+            // when operator is pressed, turn display from string into int and store as first number
+            firstNumber = getNumber(displayText.textContent);
+            console.log(firstNumber);
+            // store operate value
+            operator = button.id;
+            console.log(operator);
+            // clear screen
+            clearDisplay();
+            console.log(firstNumber);
+        // } else if (firstNumber != 0) {
+        //     let secondNumber = getNumber(displayText.textContent);
+        //     console.log(secondNumber);
+        //     let result = operate(operator, firstNumber, secondNumber);
+        //     console.log(result);
+        //     clearDisplay();
+        //     displayText.textContent += result;
+        // };
     })
 });
 
 equalButton.addEventListener("click", () => {
-    let numberTwo = getNumber(displayText.textContent);
-    console.log(numberTwo);
-    let result = operate(numberOne, operator, numberTwo);
+    let secondNumber = getNumber(displayText.textContent);
+    console.log(secondNumber);
+    let result = operate(operator, firstNumber, secondNumber);
+    console.log(result);
     clearDisplay();
+    displayText.textContent += result;
 });
 
 
 
 
-
+// is this necessary? 
 let screenInput = displayText.textContent;
-console.log(screenInput);
 
-// break down screen text into array and split???
 
 clearButton.addEventListener("click", () => {
-    displayText.textContent = "";
+    clearDisplay();
 });
 
