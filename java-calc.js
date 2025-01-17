@@ -8,6 +8,8 @@ const clearButton = document.querySelector("#clear");
 //these store data and get updated in the functions below
 let firstNumber = 0;
 let secondNumber = 0;
+let result = 0;
+let opResult = 0;
 let operator = "";
 let errorString = "Can't do that chief";
 
@@ -62,15 +64,22 @@ function clearDisplay () {
 //put numbers on display screen
 numButtons.forEach((button) => {
     button.addEventListener("click", () => {
+        // if screen already has result, wipe and start again, otherwise update screen
+        if ((result != 0) || (opResult != 0)) {
+             clearDisplay();
+             result = 0;
+             opResult = 0;
+             displayText.textContent += button.id;
+         } else {
         displayText.textContent += button.id;
+        };
     })
 });
 
 opButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        console.log(firstNumber);
         // if numberOne > 0. Means this is the second number and we equal it
-        // if (firstNumber == 0) {
+        if (firstNumber == 0) {
             // when operator is pressed, turn display from string into int and store as first number
             firstNumber = getNumber(displayText.textContent);
             console.log(firstNumber);
@@ -79,33 +88,31 @@ opButtons.forEach((button) => {
             console.log(operator);
             // clear screen
             clearDisplay();
-            console.log(firstNumber);
-        // } else if (firstNumber != 0) {
-        //     let secondNumber = getNumber(displayText.textContent);
-        //     console.log(secondNumber);
-        //     let result = operate(operator, firstNumber, secondNumber);
-        //     console.log(result);
-        //     clearDisplay();
-        //     displayText.textContent += result;
-        // };
+        } else if (firstNumber != 0) {
+             let secondNumber = getNumber(displayText.textContent);
+              console.log(secondNumber);
+             opResult = operate(operator, firstNumber, secondNumber);
+              console.log(opResult);
+             clearDisplay();
+             displayText.textContent += opResult;
+             firstNumber = opResult;
+             secondNumber = 0;
+              console.log(firstNumber);
+        };
     })
 });
 
 equalButton.addEventListener("click", () => {
-    let secondNumber = getNumber(displayText.textContent);
+    secondNumber = getNumber(displayText.textContent);
     console.log(secondNumber);
-    let result = operate(operator, firstNumber, secondNumber);
+    result = operate(operator, firstNumber, secondNumber);
     console.log(result);
     clearDisplay();
     displayText.textContent += result;
+    firstNumber = 0;
+    secondNumber = 0;
+    console.log(result);
 });
-
-
-
-
-// is this necessary? 
-let screenInput = displayText.textContent;
-
 
 clearButton.addEventListener("click", () => {
     clearDisplay();
