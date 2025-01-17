@@ -41,9 +41,9 @@ function operate(operator, firstNumber, secondNumber) {
     } else if (operator == 'x') {
         return multiply(firstNumber, secondNumber);
     } else if (operator == '/') {
+        //if you try to divide by zero, error message
         if (secondNumber === 0) {
             displayText.errorString;
-            console.log(displayText.textContent);
         } else if (secondNumber != 0) {
         return divide(firstNumber, secondNumber)};
     } 
@@ -78,42 +78,37 @@ numButtons.forEach((button) => {
 
 opButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        // if numberOne > 0. Means this is the second number and we equal it
         if (firstNumber == 0) {
             // when operator is pressed, turn display from string into int and store as first number
             firstNumber = getNumber(displayText.textContent);
-            console.log(firstNumber);
             // store operate value
             operator = button.id;
-            console.log(operator);
             // clear screen
             clearDisplay();
+        // if numberOne is not 0. Means this is the second number and we equal it before operating
         } else if (firstNumber != 0) {
+             //set second number and operate
              let secondNumber = getNumber(displayText.textContent);
-              console.log(secondNumber);
              opResult = operate(operator, firstNumber, secondNumber);
-              console.log(opResult);
+             //clear display -> display result -> set first number and operator to continue operating
              clearDisplay();
              displayText.textContent += opResult;
              firstNumber = opResult;
              operator = button.id;
              secondNumber = 0;
-              console.log(firstNumber);
-              console.log(operator);
         };
     })
 });
 
 equalButton.addEventListener("click", () => {
+    // set second number, get result, and display it
     secondNumber = getNumber(displayText.textContent);
-    console.log(secondNumber);
     result = operate(operator, firstNumber, secondNumber);
-    console.log(result);
     clearDisplay();
     displayText.textContent += result;
+    //reinitialize to start again
     firstNumber = 0;
     secondNumber = 0;
-    console.log(result);
 });
 
 clearButton.addEventListener("click", () => {
