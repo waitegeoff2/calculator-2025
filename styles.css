@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
-    background-color: lightcyan;
+    background-color: rgb(232, 232, 174);
 }
 
 .titles {
